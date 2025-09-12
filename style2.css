@@ -1,23 +1,21 @@
 /* --------- {Corpo do CSS} --------- */
-/* Corpo do css (provavelmente vai ser trocado pelo original, por isso não coloquei a font correta) */
 body {
     background-color: #F2F8F3;
     margin: auto;
-    font-family:  'Arial Narrow Bold', sans-serif;
+    font-family: 'Arial Narrow Bold', sans-serif;
 }
 
 /* --------- {Banner} --------- */
-/* Sobre o banner e seu espaçamento */
 .Container_Banner {
     width: 90rem;
     height: 60vh;
     overflow: hidden;
     margin: auto;
     margin-top: 1%;
+    display: flex;
     justify-content: center;
 }
 
-/* Imagem do banner e tamanho */
 .Container_Banner img {
     width: 100%;
     height: 100%;
@@ -25,15 +23,14 @@ body {
 }
 
 /* --------- {Barra de pesquisa} --------- */
-/* Área da pesquisa */
 .Barra_pesquisa_container {
     display: flex;
     justify-content: center;
     margin: 3%;
+    margin-top: 10%;
     position: relative;
 }
 
-/* Input da barra de pesquisa */
 .Barra_pesquisa_container input {
     z-index: 0;
     max-width: 90rem;
@@ -49,170 +46,146 @@ body {
     background-color: #F2F8F3;
 }
 
-/* Animação da borda ao passar o mouse no input */
 .Barra_pesquisa_container input:hover {
     border: solid 0.8px #4BC8EA;
-    outline: none;
 }
 
-/* Botão buscar da barra de pesquisa */
 .Barra_pesquisa_container button {
     z-index: 1;
     position: absolute;
     right: 23.6%;
     top: 15%;
-    background: linear-gradient(to left, #2FAC66, #4BC8EA); 
+    background: linear-gradient(to left, #2FAC66, #4BC8EA);
     border: none;
     outline: none;
     border-radius: 5px;
     width: 8%;
     height: 70%;
-    transition: transform 0.3s ease, background 0.5s ease-in-out, cursor 0s ease;
+    transition: transform 0.3s ease, background 0.5s ease-in-out;
     color: white;
 }
 
-/* Animação do botão ao passar o mouse (cor e tamanho) */
 .Barra_pesquisa_container button:hover {
     transform: scale(1.03);
-    background: linear-gradient(to left, #38cc78, #42cdf3); 
+    background: linear-gradient(to left, #38cc78, #42cdf3);
     cursor: pointer;
 }
 
 /* --------- {Infos antes dos cards} --------- */
-/* Container do texto e botão acima dos cards */
 .demonstracao_cards {
-    display: flex;
-    justify-content: space-between; 
     padding: 0% 8%;
     width: 100%;
-    box-sizing: border-box;
 }
 
-/* Texto e tamanho da demonstração dos cards */
 .demonstracao_cards h2 {
     font-size: 2.5rem;
     font-weight: 500;
-    color: #232624; /* Cor ajustada para valor hexadecimal consistente */
-}
-
-/* Botão demonstração cards */
-.demonstracao_cards button {
-    background-color: #F2F8F3;
     color: #232624;
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
-    position: relative;
-    transition: cursor ease 1s;
-    padding: 0%;
-    height: 1.6rem;
-    margin-top: 3.2%;
+    margin-top: 8%;
 }
 
-/* Alterar cursor ao passar o mouse */
-.demonstracao_cards button:hover {
+.demonstracao_cards p {
+    margin-top: -1%;
+    padding-bottom: 3%;
+}
+
+/* --------- {Container principal: filtros e cards} --------- */
+.Container_Search {
+    display: flex;
+    gap: 2rem;
+    padding: 0 8%;
+}
+
+/* --------- {Filtros à esquerda} --------- */
+.Container_Filtros {
+    background-color: #e2e8e4;
+    padding: 1.5rem;
+    border-radius: 16px;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.btn-limpar-filtros {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-limpar-filtros img {
+    width: 20px;
+    height: 20px;
+}
+
+.Filtro_Nota p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.Estrelas_Filtro img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.2rem;
     cursor: pointer;
 }
 
-/* Criar animação de linha embaixo do botão "veja mais" */
-.demonstracao_cards button::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;    
-    background-color: #232624;
-    transition: width 0.3s ease;
-}
-
-/* Fazer a animação da linha funcionar ao passar o mouse */
-.demonstracao_cards button:hover::after {
+.Filtro_Dropdown select,
+.Distancia_Inputs input {
     width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #5B605C;
+    background-color: #E2E8E4;
+    font-size: 0.95rem;
+    box-sizing: border-box;
 }
 
-/* --------- {Cards} --------- */
-/* Container dos cards: organiza os cards verticalmente, centralizados e com espaçamento */
-.Container_CardsTrilhas {
+.Distancia_Inputs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* --------- {Cards à direita} --------- */
+.Container_Cards_Search {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2% 0;
-    width: 100%;
-    
+    gap: 1.5rem;
 }
 
-/* Card individual: fundo, dimensões, arredondamento e layout flex */
 .CardTrilha {
     max-width: 90rem;
     width: 90%;
     height: 30vh;
     background-color: #E6EDE7;
-    border-radius: 32px;
+    border-radius: 32px; /* Mantendo maior que no segundo modelo */
     display: flex;
     position: relative;
     overflow: hidden;
     margin-top: 2%;
-    transition: box-shadow 0.3s ease;
-    transition: cursor ease 1s;
+    transition: box-shadow 0.3s ease, cursor 1s ease;
 }
 
 .CardTrilha:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     cursor: pointer;
 }
 
-/* Hover no card: leve sombra */
-.CardTrilha:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-/* Imagem do card: ocupa altura total, largura fixa, com border-radius */
 .CardTrilha img {
-    height: 100%;
     width: 30%;
+    height: 100%;
     object-fit: cover;
     border-radius: 32px;
     flex-shrink: 0;
 }
 
-/* Botão de favorito: posicionado sobre o card */
-.botao_favorito {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    z-index: 10;
-}
-
-/* Estilo do botão de favorito */
-.botao_favorito button {
-    background-color: transparent;
-    border-radius: 50%;
-    width: auto;
-    height: auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    box-shadow: none;
-    transition: transform 0.2s ease; 
-}
-
-/* Hover no coração: aumento leve */
-.botao_favorito button:hover {
-    transform: scale(1.1);
-}
-
-/* Ícone do botão de favorito */
-.botao_favorito button img {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    border-radius: 0;
-}
-
-/* Informações do card: padding interno e layout vertical */
+/* Informações dentro do card */
 .Informacoes_Card {
     padding: 1.5rem 2rem;
     display: flex;
@@ -222,7 +195,6 @@ body {
     flex-grow: 1;
 }
 
-/* Título do card */
 .Informacoes_Card h3 {
     font-size: 1.8rem;
     margin-top: 3%;
@@ -230,7 +202,7 @@ body {
     color: #232624;
 }
 
-/* Notas e avaliações do card */
+/* Avaliações e notas */
 .Notacao {
     display: flex;
     align-items: center;
@@ -256,36 +228,60 @@ body {
     margin-top: -0.3rem;
 }
 
-/* Informações rápidas do card (distância, dificuldade, etc.) */
+/* Informações rápidas */
 .infos_rapidas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: auto;
-    margin-bottom: 2%;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
-/* Mini área de informação (ícone + texto) */
 .MiniInfoArea {
     display: flex;
     align-items: center;
+    gap: 0.3rem;
 }
 
 .MiniInfoArea img {
     width: 25px;
     height: 25px;
-    margin-right: 0.5rem;
     object-fit: contain;
-    border-radius: 0;
 }
 
-.MiniInfoArea p {
-    font-size: 1.1rem;
-    color: #5B605C;
-    margin: 0;
+/* Botão de favorito */
+.botao_favorito {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10;
 }
 
-/* Botões de subir/descer fixos no canto inferior direito */
+.botao_favorito button {
+    background-color: transparent;
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    transition: transform 0.2s ease;
+}
+
+.botao_favorito button:hover {
+    transform: scale(1.1);
+}
+
+.botao_favorito button img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* --------- {Botões subir/descer} --------- */
 .Container_botoeslocomocao {
     position: fixed;
     bottom: 2rem;
@@ -319,3 +315,7 @@ body {
     height: 1.5rem;
 }
 
+#rodape {
+    color: #E2E8E4;
+    margin: 1%;
+}
