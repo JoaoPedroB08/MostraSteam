@@ -4,4 +4,4 @@ Fazendo the mostra steam
 ## imagens
 ![Descrição da imagem](/imgReadme/imagem1.png)
 ![Descrição da imagem](/imgReadme/imagem2.png)
-![Descrição da imagem](/imgReadme/imagem3.png)
+![Descrição da imagem](/imgReadme/Imagem3.png)
