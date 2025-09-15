@@ -9,72 +9,53 @@ body {
 /* --------- {Banner} --------- */
 /* Sobre o banner e seu espaçamento */
 .Container_Banner {
-    width: 90rem;
-    height: 60vh;
-    overflow: hidden;
-    margin: auto;
-    margin-top: 1%;
+    width: 76%;
+    max-width: 90rem; 
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
     justify-content: center;
 }
 
-/* Imagem do banner e tamanho */
 .Container_Banner img {
     width: 100%;
-    height: 100%;
+    height: 35rem;
     object-fit: cover;
 }
 
 /* --------- {Barra de pesquisa} --------- */
 /* Área da pesquisa */
 .Barra_pesquisa_container {
+    position: relative;
     display: flex;
     justify-content: center;
-    margin: 3%;
-    position: relative;
+    margin-top: 4rem;
 }
 
 /* Input da barra de pesquisa */
 .Barra_pesquisa_container input {
-    z-index: 0;
-    max-width: 90rem;
     width: 60rem;
     height: 3.5rem;
     border-radius: 10px;
     border: solid 0.5px #5B605C;
-    transition: border 0.1s ease-in-out;
-    outline: none;
-    font-size: 1rem;
-    padding-left: 2%;
-    box-sizing: border-box;
+    padding-right: 8rem;
+    padding-left: 2rem;
     background-color: #F2F8F3;
 }
 
-/* Animação da borda ao passar o mouse no input */
-.Barra_pesquisa_container input:hover {
-    border: solid 0.8px #4BC8EA;
-    outline: none;
-}
 
 /* Botão buscar da barra de pesquisa */
 .Barra_pesquisa_container button {
-    z-index: 1;
     position: absolute;
-    right: 23.6%;
-    top: 15%;
-    background: linear-gradient(to left, #2FAC66, #4BC8EA); 
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    width: 8%;
+    right: calc(50% - 35rem + 0.5rem); 
+    top: 50%;
+    transform: translateY(-50%);
     height: 70%;
-    transition: transform 0.3s ease, background 0.5s ease-in-out, cursor 0s ease;
+    width: 7rem;
+    border-radius: 8px;
+    background: linear-gradient(to left, #2FAC66, #4BC8EA);
     color: white;
-}
-
-/* Animação do botão ao passar o mouse (cor e tamanho) */
-.Barra_pesquisa_container button:hover {
-    transform: scale(1.03);
-    background: linear-gradient(to left, #38cc78, #42cdf3); 
+    border: none;
     cursor: pointer;
 }
 
@@ -82,54 +63,41 @@ body {
 /* Container do texto e botão acima dos cards */
 .demonstracao_cards {
     display: flex;
-    justify-content: space-between; 
-    padding: 0% 8%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
     width: 100%;
+    max-width: 105rem;
+    min-width: 60rem; 
+    margin: 0 auto;
+    padding: 5rem 2rem;
     box-sizing: border-box;
-}
-
-/* Texto e tamanho da demonstração dos cards */
-.demonstracao_cards h2 {
+  }
+  
+  /* título: pode crescer, mas não vai encolher abaixo do min-width */
+  .demonstracao_cards h2 {
     font-size: 2.5rem;
     font-weight: 500;
-    color: #232624; /* Cor ajustada para valor hexadecimal consistente */
-}
-
-/* Botão demonstração cards */
-.demonstracao_cards button {
-    background-color: #F2F8F3;
     color: #232624;
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
-    position: relative;
-    transition: cursor ease 1s;
-    padding: 0%;
+    margin: 0;
+    flex: 1 1 auto; 
+    min-width: 14rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* botão: tamanho fixo, não encolhe */
+  .demonstracao_cards button {
+    flex: 0 0 auto;
+    min-width: 8rem; 
     height: 1.6rem;
-    margin-top: 3.2%;
-}
-
-/* Alterar cursor ao passar o mouse */
-.demonstracao_cards button:hover {
+    padding: 0.4rem 1rem;
+    font-size: large;
+    border: none;
+    background: transparent;
     cursor: pointer;
-}
-
-/* Criar animação de linha embaixo do botão "veja mais" */
-.demonstracao_cards button::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;    
-    background-color: #232624;
-    transition: width 0.3s ease;
-}
-
-/* Fazer a animação da linha funcionar ao passar o mouse */
-.demonstracao_cards button:hover::after {
-    width: 100%;
-}
+  }
 
 /* --------- {Cards} --------- */
 /* Container dos cards: organiza os cards verticalmente, centralizados e com espaçamento */
@@ -138,32 +106,21 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2% 0;
-    width: 100%;
-    
+    width: 100%;   
 }
 
 /* Card individual: fundo, dimensões, arredondamento e layout flex */
 .CardTrilha {
     max-width: 90rem;
     width: 90%;
-    height: 30vh;
+    height: 20rem;
     background-color: #E6EDE7;
     border-radius: 32px;
     display: flex;
     position: relative;
     overflow: hidden;
-    margin-top: 2%;
-    transition: box-shadow 0.3s ease;
+    margin-top: 2rem;
     transition: cursor ease 1s;
-}
-
-.CardTrilha:hover {
-    cursor: pointer;
-}
-
-/* Hover no card: leve sombra */
-.CardTrilha:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 /* Imagem do card: ocupa altura total, largura fixa, com border-radius */
@@ -199,10 +156,6 @@ body {
     transition: transform 0.2s ease; 
 }
 
-/* Hover no coração: aumento leve */
-.botao_favorito button:hover {
-    transform: scale(1.1);
-}
 
 /* Ícone do botão de favorito */
 .botao_favorito button img {
@@ -216,7 +169,7 @@ body {
 .Informacoes_Card {
     padding: 1.5rem 2rem;
     display: flex;
-    margin-left: 5%;
+    margin-left: 5rem;
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
@@ -225,7 +178,7 @@ body {
 /* Título do card */
 .Informacoes_Card h3 {
     font-size: 1.8rem;
-    margin-top: 3%;
+    margin-top: 2rem;
     margin-bottom: 0;
     color: #232624;
 }
@@ -262,7 +215,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: auto;
-    margin-bottom: 2%;
+    margin-bottom: 2rem;
 }
 
 /* Mini área de informação (ícone + texto) */
@@ -292,13 +245,12 @@ body {
     right: 2rem;
     background-color: #E2E8E4;
     width: 3rem;
-    height: 8rem;
+    height: 7rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
     z-index: 9999;
 }
 
@@ -315,7 +267,7 @@ body {
 }
 
 .Container_botoeslocomocao button img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 
