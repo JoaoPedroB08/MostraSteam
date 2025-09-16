@@ -2,7 +2,7 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* Garante que padding e bordas não afetem a largura total */
+    box-sizing: border-box;
 }
 
 body {
@@ -368,9 +368,7 @@ body {
 }
 
 
-/* ------------------------------------------------------------------ */
 /* --------- {Responsividade geral para celulares abaixo de 430px} --------- */
-/* ------------------------------------------------------------------ */
 @media (max-width: 430px) {
 
     /* --------- {Navbar com Menu Hambúrguer} --------- */
@@ -426,7 +424,7 @@ body {
     /* --------- {Barra de Pesquisa e Botão Adicionar} --------- */
     .Barra_pesquisa_container {
         flex-direction: column;
-        align-items: stretch; /* Itens ocupam 100% da largura */
+        align-items: stretch; 
         padding: 0 1rem;
         margin-top: 2rem;
     }
@@ -443,7 +441,7 @@ body {
     
     .btn_adicionar_trilha {
         width: 100%;
-        height: 3.5rem; /* No mobile, ele volta a ter a altura total para um toque mais fácil */
+        height: 3.5rem; 
         border-radius: 10px;
     }
     
@@ -513,4 +511,5 @@ body {
     .Container_botoeslocomocao {
         display: none;
     }
+
 }
