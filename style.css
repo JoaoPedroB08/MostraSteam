@@ -38,18 +38,19 @@ body {
     height: 2.5rem;
 }
 
-/* Container dos links para desktop */
+/* Container principal para os botões */
 .nav_links {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    flex-grow: 1; 
 }
 
 .botoesnavcentrais {
     display: flex;
     align-items: center;
     gap: 2.5rem;
-    padding-left: 10rem;
+    margin: 0 auto;
+    padding-left:8rem;
 }
 
 .botoesnavlogin {
@@ -127,7 +128,6 @@ body {
     padding: 0 2rem;
 }
 
-/* Wrapper para o input e botão de busca */
 .search_input_wrapper {
     position: relative;
     width: 100%;
@@ -159,7 +159,6 @@ body {
     cursor: pointer;
 }
 
-/* Estilo do novo Botão Adicionar Trilha */
 .btn_adicionar_trilha {
     height: calc(3.5rem * 0.8);
     padding: 0 1.5rem;
@@ -295,7 +294,7 @@ body {
 }
 
 .Notacao h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #5B605C;
     margin-right: 0.5rem;
     font-weight: bold;
@@ -367,7 +366,6 @@ body {
     height: 2rem;
 }
 
-
 /* --------- {Responsividade geral para celulares abaixo de 430px} --------- */
 @media (max-width: 430px) {
 
@@ -375,11 +373,12 @@ body {
     .navbar_inner {
         padding: 0 1rem;
     }
-    
+
     .hamburger_menu {
         display: flex;
     }
 
+    /* Esconde o container de links no mobile por padrão */
     .nav_links {
         display: none;
         flex-direction: column;
@@ -394,18 +393,22 @@ body {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
+    /* Mostra o menu quando ativo */
     .nav_links.active {
         display: flex;
     }
     
     .botoesnavcentrais {
         flex-direction: column;
-        padding-left: 0;
+        align-items: center;
         gap: 1.5rem;
+        margin: 0;
+        padding-left: 0;
     }
 
     .botoesnavlogin {
         flex-direction: column;
+        align-items: center;
         gap: 1.5rem;
     }
 
@@ -413,7 +416,7 @@ body {
     .Container_Banner {
         width: 100%;
         margin-top: 5.5rem;
-        padding: 0 1rem;
+        padding: 1rem 1rem;
     }
 
     .Container_Banner img {
@@ -424,7 +427,7 @@ body {
     /* --------- {Barra de Pesquisa e Botão Adicionar} --------- */
     .Barra_pesquisa_container {
         flex-direction: column;
-        align-items: stretch; 
+        align-items: stretch;
         padding: 0 1rem;
         margin-top: 2rem;
     }
@@ -441,7 +444,7 @@ body {
     
     .btn_adicionar_trilha {
         width: 100%;
-        height: 3.5rem; 
+        height: 3.5rem;
         border-radius: 10px;
     }
     
@@ -483,6 +486,7 @@ body {
 
     .Informacoes_Card h3 {
         font-size: 1.4rem;
+        margin-bottom: -1.5rem;
         margin-top: 0;
     }
     
@@ -511,5 +515,4 @@ body {
     .Container_botoeslocomocao {
         display: none;
     }
-
 }
