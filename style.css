@@ -1,18 +1,112 @@
-/* --------- {Corpo do CSS} --------- */
-/* Corpo do css (provavelmente vai ser trocado pelo original, por isso não coloquei a font correta) */
-body {
-    background-color: #F2F8F3;
-    margin: auto;
-    font-family:  'Arial Narrow Bold', sans-serif;
+/* --------- {Reset e Configurações Globais} --------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Garante que padding e bordas não afetem a largura total */
 }
 
+body {
+    background-color: #F2F8F3;
+    margin: 0;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+/* --------- {Navbar} --------- */
+#navbar {
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: #F2F8F3;
+    position: fixed;
+    top: 0;
+}
+
+.navbar_inner {
+    width: 100%;
+    max-width: 105rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_area .logo_img {
+    height: 2.5rem;
+}
+
+/* Container dos links para desktop */
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.botoesnavcentrais {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding-left: 10rem;
+}
+
+.botoesnavlogin {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.botaonavbase {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: #383D39;
+    cursor: pointer;
+    padding: 0;
+}
+
+.botaologar {
+    background-color: #2FAC66;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.8rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Botão Hambúrguer (escondido no desktop) */
+.hamburger_menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger_menu span {
+    width: 2rem;
+    height: 0.25rem;
+    background: #383D39;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+
 /* --------- {Banner} --------- */
-/* Sobre o banner e seu espaçamento */
 .Container_Banner {
     width: 76%;
-    max-width: 90rem; 
-    margin: 0 auto;
-    margin-top: 2rem;
+    max-width: 90rem;
+    margin: 7rem auto 0;
     display: flex;
     justify-content: center;
 }
@@ -23,34 +117,40 @@ body {
     object-fit: cover;
 }
 
-/* --------- {Barra de pesquisa} --------- */
-/* Área da pesquisa */
+/* --------- {Barra de pesquisa e Botão Adicionar} --------- */
 .Barra_pesquisa_container {
-    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
     margin-top: 4rem;
+    padding: 0 2rem;
 }
 
-/* Input da barra de pesquisa */
-.Barra_pesquisa_container input {
-    width: 60rem;
+/* Wrapper para o input e botão de busca */
+.search_input_wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 60rem;
+}
+
+.search_input_wrapper input {
+    width: 100%;
     height: 3.5rem;
     border-radius: 10px;
     border: solid 0.5px #5B605C;
     padding-right: 8rem;
     padding-left: 2rem;
+    font-size: 1rem;
     background-color: #F2F8F3;
 }
 
-
-/* Botão buscar da barra de pesquisa */
-.Barra_pesquisa_container button {
+.search_input_wrapper button {
     position: absolute;
-    right: calc(50% - 35rem + 0.5rem); 
+    right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
-    height: 70%;
+    height: 80%;
     width: 7rem;
     border-radius: 8px;
     background: linear-gradient(to left, #2FAC66, #4BC8EA);
@@ -59,8 +159,24 @@ body {
     cursor: pointer;
 }
 
+/* Estilo do novo Botão Adicionar Trilha */
+.btn_adicionar_trilha {
+    height: calc(3.5rem * 0.8);
+    padding: 0 1.5rem;
+    background-color: #2FAC66;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 /* --------- {Infos antes dos cards} --------- */
-/* Container do texto e botão acima dos cards */
 .demonstracao_cards {
     display: flex;
     align-items: center;
@@ -68,48 +184,39 @@ body {
     gap: 2rem;
     width: 100%;
     max-width: 105rem;
-    min-width: 60rem; 
     margin: 0 auto;
-    padding: 5rem 2rem;
-    box-sizing: border-box;
-  }
-  
-  /* título: pode crescer, mas não vai encolher abaixo do min-width */
-  .demonstracao_cards h2 {
+    padding: 5rem 2rem 0rem;
+}
+
+.demonstracao_cards h2 {
     font-size: 2.5rem;
     font-weight: 500;
     color: #232624;
     margin: 0;
-    flex: 1 1 auto; 
-    min-width: 14rem;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  /* botão: tamanho fixo, não encolhe */
-  .demonstracao_cards button {
-    flex: 0 0 auto;
-    min-width: 8rem; 
+}
+
+.demonstracao_cards button {
+    flex-shrink: 0;
+    min-width: 8rem;
     height: 1.6rem;
     padding: 0.4rem 1rem;
     font-size: large;
     border: none;
     background: transparent;
     cursor: pointer;
-  }
+}
+
 
 /* --------- {Cards} --------- */
-/* Container dos cards: organiza os cards verticalmente, centralizados e com espaçamento */
 .Container_CardsTrilhas {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2% 0;
-    width: 100%;   
+    width: 100%;
 }
 
-/* Card individual: fundo, dimensões, arredondamento e layout flex */
 .CardTrilha {
     max-width: 90rem;
     width: 90%;
@@ -123,7 +230,6 @@ body {
     transition: cursor ease 1s;
 }
 
-/* Imagem do card: ocupa altura total, largura fixa, com border-radius */
 .CardTrilha img {
     height: 100%;
     width: 30%;
@@ -132,7 +238,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Botão de favorito: posicionado sobre o card */
 .botao_favorito {
     position: absolute;
     top: 2rem;
@@ -140,7 +245,6 @@ body {
     z-index: 10;
 }
 
-/* Estilo do botão de favorito */
 .botao_favorito button {
     background-color: transparent;
     border-radius: 50%;
@@ -153,11 +257,9 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: none;
-    transition: transform 0.2s ease; 
+    transition: transform 0.2s ease;
 }
 
-
-/* Ícone do botão de favorito */
 .botao_favorito button img {
     width: 35px;
     height: 35px;
@@ -165,7 +267,6 @@ body {
     border-radius: 0;
 }
 
-/* Informações do card: padding interno e layout vertical */
 .Informacoes_Card {
     padding: 1.5rem 2rem;
     display: flex;
@@ -175,7 +276,6 @@ body {
     flex-grow: 1;
 }
 
-/* Título do card */
 .Informacoes_Card h3 {
     font-size: 1.8rem;
     margin-top: 2rem;
@@ -183,7 +283,6 @@ body {
     color: #232624;
 }
 
-/* Notas e avaliações do card */
 .Notacao {
     display: flex;
     align-items: center;
@@ -209,7 +308,6 @@ body {
     margin-top: -0.3rem;
 }
 
-/* Informações rápidas do card (distância, dificuldade, etc.) */
 .infos_rapidas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -218,7 +316,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Mini área de informação (ícone + texto) */
 .MiniInfoArea {
     display: flex;
     align-items: center;
@@ -238,7 +335,6 @@ body {
     margin: 0;
 }
 
-/* Botões de subir/descer fixos no canto inferior direito */
 .Container_botoeslocomocao {
     position: fixed;
     bottom: 2rem;
@@ -271,3 +367,150 @@ body {
     height: 2rem;
 }
 
+
+/* ------------------------------------------------------------------ */
+/* --------- {Responsividade geral para celulares abaixo de 430px} --------- */
+/* ------------------------------------------------------------------ */
+@media (max-width: 430px) {
+
+    /* --------- {Navbar com Menu Hambúrguer} --------- */
+    .navbar_inner {
+        padding: 0 1rem;
+    }
+    
+    .hamburger_menu {
+        display: flex;
+    }
+
+    .nav_links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        background-color: #F2F8F3;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav_links.active {
+        display: flex;
+    }
+    
+    .botoesnavcentrais {
+        flex-direction: column;
+        padding-left: 0;
+        gap: 1.5rem;
+    }
+
+    .botoesnavlogin {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* --------- {Banner} --------- */
+    .Container_Banner {
+        width: 100%;
+        margin-top: 5.5rem;
+        padding: 0 1rem;
+    }
+
+    .Container_Banner img {
+        height: 15rem;
+        border-radius: 1rem;
+    }
+
+    /* --------- {Barra de Pesquisa e Botão Adicionar} --------- */
+    .Barra_pesquisa_container {
+        flex-direction: column;
+        align-items: stretch; /* Itens ocupam 100% da largura */
+        padding: 0 1rem;
+        margin-top: 2rem;
+    }
+
+    .search_input_wrapper {
+        width: 100%;
+    }
+
+    .search_input_wrapper button {
+        right: 0.5rem;
+        width: 5.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn_adicionar_trilha {
+        width: 100%;
+        height: 3.5rem; /* No mobile, ele volta a ter a altura total para um toque mais fácil */
+        border-radius: 10px;
+    }
+    
+    /* --------- {Layout dos Cards} --------- */
+    .demonstracao_cards {
+        padding: 3rem 1rem 0;
+    }
+    
+    .demonstracao_cards h2 {
+        font-size: 1.5rem;
+    }
+
+    .demonstracao_cards button {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .Container_CardsTrilhas{
+        padding: 1rem 0;
+    }
+
+    .CardTrilha {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+    }
+
+    .CardTrilha img {
+        width: 100%;
+        height: 16rem;
+        border-radius: 32px 32px 0 0;
+    }
+
+    .Informacoes_Card {
+        margin-left: 0;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .Informacoes_Card h3 {
+        font-size: 1.4rem;
+        margin-top: 0;
+    }
+    
+    .botao_favorito {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* --------- {Detalhes dos Cards} --------- */
+    .infos_rapidas {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .MiniInfoArea img, .Notacao img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .MiniInfoArea p {
+        font-size: 0.9rem;
+    }
+
+    /* --------- {Botões de Subir/Descer} --------- */
+    .Container_botoeslocomocao {
+        display: none;
+    }
+}
