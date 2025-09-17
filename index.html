@@ -9,32 +9,27 @@
 <body>
     
     <!-- Navbar ainda q n sei se já está pronta ou n -->
-    <div id="navbar">
-        <div class="navbar_inner">
-            <div class="logo_area">
-                <img src="imagens/Logo.png" alt="Logo" class="logo_img">
+    <header>
+        <div class="logo">
+            <img src="imagens/logo.svg" alt="">
+        </div>
+        <!-- Botão Hambúrguer (para mobile) -->
+        <div class="nav_links" id="nav-links">
+            <div class="botoesnavcentrais">
+                <button class="botaonavbase">Explorar</button>
+                <button class="botaonavbase">Minhas Trilhas</button>
             </div>
-    
-            <!-- Botão Hambúrguer (para mobile) -->
-            <button class="hamburger_menu" id="hamburger-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-    
-            <!-- Container principal para todos os botões de navegação -->
-            <div class="nav_links" id="nav-links">
-                <div class="botoesnavcentrais">
-                    <button class="botaonavbase">Explorar</button>
-                    <button class="botaonavbase">Minhas Trilhas</button>
-                </div>
-                <div class="botoesnavlogin">
-                    <button class="botaonavbase">cadastrar</button>
-                    <button class="botaologar">entrar</button>
-                </div>
+            <div class="botoesnavlogin">
+                <button class="botaonavbase">Cadastrar</button>
+                <button class="botaologar">Entrar</button>
             </div>
         </div>
-    </div>
+        <button class="hamburger_menu" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
     <!-- Botões de locomoção -->
     <div class="Container_botoeslocomocao">
@@ -213,9 +208,13 @@
             </div>
         </div>
     </div>
-
+    <div class="centralizacaoofds">
+        <button id="btn-pesquisar2">Ver Mais</button>
+    </div>
     <!-- rodapé de apoio para o tp funfar -->
-    <div id="rodape"></div>
+    <div id="rodape">
+        <div>© Trekit 2025. Todos os direitos reservados<span>Políticas e Condições de Uso</span></div>
+    </div>
 
     <script src="script.js"></script>
 

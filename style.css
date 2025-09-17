@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Regular';
+    src: url('vremenagrotesk.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Vremena Grotesk';
+    src: url('vremenagroteskbold.ttf') format('truetype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Vremena Grotesk';
+    src: url('vremenagroteskmedium.ttf') format('truetype');
+    font-weight: 500;
+}
+        @font-face {
+    font-family: 'Vremena Grotesk';
+    src: url('vremenagroteskmedium.ttf') format('truetype');
+    font-weight: 500;
+}
 /* --------- {Reset e Configurações Globais} --------- */
 *,
 *::before,
@@ -8,20 +28,27 @@
 body {
     background-color: #F2F8F3;
     margin: 0;
-    font-family: 'Arial Narrow Bold', sans-serif;
+    font-family: 'Regular';
 }
-
+:root {
+    --verde: #2FAC66;
+    --preto: #232624;
+    --light-white: #F2F8F3;
+    --light-gray: #EAF0EB;
+    --border-color: #5B605C;
+}
 /* --------- {Navbar} --------- */
-#navbar {
-    width: 100%;
-    padding: 1.5rem 0;
+header {
+    background-color: var(--light-white);
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 1000;
-    background-color: #F2F8F3;
-    position: fixed;
+    justify-content: space-between;
+    padding: 1.5rem 8.5rem;
+    width: 100%;
     top: 0;
+    position: fixed;
+    background-color: #F2F8F3;
+    z-index: 1000;
 }
 
 .navbar_inner {
@@ -34,9 +61,7 @@ body {
     align-items: center;
 }
 
-.logo_area .logo_img {
-    height: 2.5rem;
-}
+
 
 /* Container principal para os botões */
 .nav_links {
@@ -60,22 +85,25 @@ body {
 }
 
 .botaonavbase {
+    font-family: 'Regular';
     background-color: transparent;
     border: none;
     font-size: 1rem;
+    font-weight: 400;
     color: #383D39;
     cursor: pointer;
     padding: 0;
 }
 
 .botaologar {
-    background-color: #2FAC66;
+    background-color: var(--verde);
     color: white;
     border: none;
     padding: 0.6rem 1.8rem;
     border-radius: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
+    font-family: 'Regular';
 }
 
 /* Botão Hambúrguer (escondido no desktop) */
@@ -95,7 +123,7 @@ body {
 .hamburger_menu span {
     width: 2rem;
     height: 0.25rem;
-    background: #383D39;
+    background: #232624;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -106,7 +134,7 @@ body {
 /* --------- {Banner} --------- */
 .Container_Banner {
     width: 76%;
-    max-width: 90rem;
+    max-width: 105rem;
     margin: 7rem auto 0;
     display: flex;
     justify-content: center;
@@ -147,22 +175,45 @@ body {
 
 .search_input_wrapper button {
     position: absolute;
+    font-size: 1rem;
     right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
     height: 80%;
     width: 7rem;
     border-radius: 8px;
-    background: linear-gradient(to left, #2FAC66, #4BC8EA);
+    font-family: 'Regular';
+    background: linear-gradient(to left, var(--verde), #4BC8EA);
     color: white;
     border: none;
     cursor: pointer;
 }
 
+#btn-pesquisar2 {
+    height: 100%;
+    width: 7rem;
+    border-radius: 8px;
+    font-family: 'Regular';
+    background: linear-gradient(to left, var(--verde), #4BC8EA);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+.centralizacaoofds {
+    height: 2.8rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
 .btn_adicionar_trilha {
     height: calc(3.5rem * 0.8);
     padding: 0 1.5rem;
-    background-color: #2FAC66;
+    background-color: var(--verde);
     color: white;
     border: none;
     border-radius: 8px;
@@ -173,6 +224,7 @@ body {
     justify-content: center;
     white-space: nowrap;
     flex-shrink: 0;
+    font-family: 'Regular';
 }
 
 /* --------- {Infos antes dos cards} --------- */
@@ -184,7 +236,7 @@ body {
     width: 100%;
     max-width: 105rem;
     margin: 0 auto;
-    padding: 5rem 2rem 0rem;
+    padding: 3rem 2rem 0rem;
 }
 
 .demonstracao_cards h2 {
@@ -206,6 +258,13 @@ body {
     cursor: pointer;
 }
 
+/* Rodapé */
+
+.rodape {
+    background-color: #F2F8F3;
+    height: 10rem;
+}
+
 
 /* --------- {Cards} --------- */
 .Container_CardsTrilhas {
@@ -219,9 +278,9 @@ body {
 .CardTrilha {
     max-width: 90rem;
     width: 90%;
-    height: 20rem;
+    height: 15rem;
     background-color: #E6EDE7;
-    border-radius: 32px;
+    border-radius: 20px;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -233,7 +292,7 @@ body {
     height: 100%;
     width: 30%;
     object-fit: cover;
-    border-radius: 32px;
+    border-radius: 20px;
     flex-shrink: 0;
 }
 
@@ -267,7 +326,7 @@ body {
 }
 
 .Informacoes_Card {
-    padding: 1.5rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
     margin-left: 5rem;
     flex-direction: column;
@@ -276,8 +335,9 @@ body {
 }
 
 .Informacoes_Card h3 {
-    font-size: 1.8rem;
-    margin-top: 2rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 0rem;
     margin-bottom: 0;
     color: #232624;
 }
@@ -285,19 +345,21 @@ body {
 .Notacao {
     display: flex;
     align-items: center;
+    margin-top: -0.8rem;
 }
 
 .Notacao p {
     font-size: 1rem;
     color: #5B605C;
     margin-right: 0.3rem;
+    font-weight: 300;
 }
 
 .Notacao h4 {
     font-size: 1rem;
     color: #5B605C;
     margin-right: 0.5rem;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .Notacao img {
@@ -330,7 +392,7 @@ body {
 
 .MiniInfoArea p {
     font-size: 1.1rem;
-    color: #5B605C;
+    color: #232624;
     margin: 0;
 }
 
@@ -365,7 +427,23 @@ body {
     width: 2rem;
     height: 2rem;
 }
-
+#rodape{
+background-color: #E2E8E4;
+width: 100%;
+height: 7rem;
+font-size: 0.8rem;
+font-weight: 300;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #232624;
+margin-top: 23rem;
+}
+span{
+    color: var(--verde);
+    margin-left: 1rem;
+    cursor: pointer;
+}
 /* --------- {Responsividade geral para celulares abaixo de 430px} --------- */
 @media (max-width: 430px) {
 
